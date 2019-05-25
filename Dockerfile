@@ -3,7 +3,7 @@
 #
 FROM openjdk:8-jre-alpine
 
-ENV PMD_VERSION=6.7.0
+ENV PMD_VERSION=6.12.0
 
 RUN apk add --update \
     bash \
@@ -18,8 +18,8 @@ RUN curl -sLO https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_
     rm pmd-bin-*.zip && \
     echo '#!/bin/bash' >> /usr/local/bin/pmd && \
     echo '#!/bin/bash' >> /usr/local/bin/cpd && \
-    echo '/opt/pmd-bin-6.7.0/bin/run.sh pmd "$@"' >> /usr/local/bin/pmd && \
-    echo '/opt/pmd-bin-6.7.0/bin/run.sh cpd "$@"' >> /usr/local/bin/cpd && \
+    echo '/opt/pmd-bin-6.12.0/bin/run.sh pmd "$@"' >> /usr/local/bin/pmd && \
+    echo '/opt/pmd-bin-6.12.0/bin/run.sh cpd "$@"' >> /usr/local/bin/cpd && \
     chmod +x /usr/local/bin/pmd && \
     chmod +x /usr/local/bin/cpd 
 
